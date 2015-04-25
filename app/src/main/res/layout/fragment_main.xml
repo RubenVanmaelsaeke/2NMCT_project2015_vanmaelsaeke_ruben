@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Toon op Map"
-        android:id="@+id/button"
+        android:id="@+id/btnToon"
         android:layout_below="@+id/txtLocatie"
         android:layout_alignStart="@+id/textView2"
         android:layout_marginTop="39dp"
