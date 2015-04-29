@@ -7,14 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 /**
  * Created by Ruben on 25/04/2015.
  */
 public class MainFragment extends Fragment {
-    private Button btnToon;
-    private EditText txtLocatie;
+
+    private Button btnOpdracht1, btnOpdracht2, btnOpdracht3, btnOpdracht4;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,13 +25,38 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main,container,false);
 
-        txtLocatie = (EditText)v.findViewById(R.id.txtLocatie);
-
-        btnToon = (Button)v.findViewById(R.id.btnToon);
-        btnToon.setOnClickListener(new View.OnClickListener() {
+        btnOpdracht1 = (Button)v.findViewById(R.id.btnOpdracht1);
+        btnOpdracht1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //GO TO MAP and show location from textfield
+                //Go to 2nd screen with value from button 1
+
+            }
+        });
+
+        btnOpdracht2 = (Button)v.findViewById(R.id.btnOpdracht2);
+        btnOpdracht2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Go to 2nd screen with value from button 2
+
+            }
+        });
+
+        btnOpdracht3 = (Button)v.findViewById(R.id.btnOpdracht3);
+        btnOpdracht3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Go to 2nd screen with value from button 3
+
+            }
+        });
+
+        btnOpdracht4 = (Button)v.findViewById(R.id.btnOpdracht4);
+        btnOpdracht4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Go to 2nd screen with value from button 4
 
             }
         });
