@@ -1,10 +1,10 @@
 package be.howest.nmct.googlemapsapp;
 
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class Map extends Fragment implements OnMapReadyCallback {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     MapFragment mMap;
 
@@ -28,8 +31,9 @@ public class Map extends Fragment implements OnMapReadyCallback {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_map,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_maps,container,false);
 
         mMap = getMapFragment();
         mMap.getMapAsync(this);
@@ -53,13 +57,12 @@ public class Map extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap map) {
         LatLng location = new LatLng(50.825635, 3.257938);
         map.setMyLocationEnabled(true);
+        map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
         map.addMarker(new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_marker))
                 .title("OPDRACHT 1")
-                .snippet("Voltooi de opdracht en krijg de coordinaten van de volgende opdracht")
+                .snippet("Voltooi de opdracht en krijg de volgende coordinaten")
                 .position(location));
     }
-
-
 }

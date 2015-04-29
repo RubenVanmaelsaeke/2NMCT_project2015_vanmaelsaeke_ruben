@@ -18,7 +18,7 @@ public class MainActivity extends Activity  {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new Map())
+                    .add(R.id.container, new MapsFragment())
                     .commit();
         }
     }
@@ -57,7 +57,7 @@ public class MainActivity extends Activity  {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             //HIER DE FRAGMENT AANPASSEN DIE ALS EERSTE WORDT GETOOND!
-            View rootView = inflater.inflate(R.layout.fragment_map, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_maps, container, false);
             return rootView;
         }
     }
