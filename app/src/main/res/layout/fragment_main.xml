@@ -11,11 +11,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Zoeken op Locatie"
+        android:text="Selecteer de opdracht"
         android:id="@+id/textView"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#00adef" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPDRACHT 1"
+        android:id="@+id/btnOpdracht1"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="39dp"
+        android:layout_alignEnd="@+id/textView"
+        android:background="#00adef"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPDRACHT 2"
+        android:id="@+id/btnOpdracht2"
+        android:layout_marginTop="32dp"
+        android:background="#00adef"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_below="@+id/btnOpdracht1"
+        android:layout_alignStart="@+id/btnOpdracht1"
+        android:layout_alignEnd="@+id/btnOpdracht1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPDRACHT 3"
+        android:id="@+id/btnOpdracht3"
+        android:layout_marginTop="41dp"
+        android:background="#00adef"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_below="@+id/btnOpdracht2"
+        android:layout_alignStart="@+id/btnOpdracht2"
+        android:layout_alignEnd="@+id/btnOpdracht2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OPDRACHT 4"
+        android:id="@+id/btnOpdracht4"
+        android:background="#00adef"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_below="@+id/btnOpdracht3"
+        android:layout_marginTop="36dp"
+        android:layout_alignStart="@+id/btnOpdracht3"
+        android:layout_alignEnd="@+id/btnOpdracht3" />
 
 </RelativeLayout>
