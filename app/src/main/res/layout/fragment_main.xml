@@ -16,7 +16,7 @@
         android:textSize="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#AB7959" />
+        android:textColor="#00adef" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,17 +42,6 @@
         android:layout_below="@+id/textView2"
         android:layout_alignStart="@+id/textView"
         android:layout_alignEnd="@+id/textView" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txtInstructies"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Instructies App"
-        android:textStyle="bold"
-        android:clickable="true" />
 
     <Button
         android:layout_width="wrap_content"
