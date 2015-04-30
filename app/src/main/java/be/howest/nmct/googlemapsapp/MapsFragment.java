@@ -1,6 +1,7 @@
 package be.howest.nmct.googlemapsapp;
 
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,9 +26,39 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     MapFragment mMap;
 
+    onShowMapsListener i;
+
+    static final String OPDRACHT = "be.howest.nmct.OPDRACHT";
+    static final String LAT = "be.howest.nmct.LAT";
+    static final String LON = "be.howest.nmct.LON";
+
+    public String opdracht;
+    public Double lat, lon;
+
+    public interface onShowMapsListener{
+        public void showMapsFragment();
+    }
+
+    //noodzakelijk!!!!
+    public MapsFragment(){
+
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        i = (onShowMapsListener) activity;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getArguments() != null){
+            opdracht = getArguments().getString(OPDRACHT);
+            lat = Double.valueOf(getArguments().getString(LAT));
+            lon = Double.valueOf(getArguments().getString(LON));
+        }
     }
 
     @Override
@@ -55,14 +86,24 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap map) {
-        LatLng location = new LatLng(50.825635, 3.257938);
+        LatLng location = new LatLng(lat, lon);
         map.setMyLocationEnabled(true);
         map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
         map.addMarker(new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_marker))
-                .title("OPDRACHT 1")
-                .snippet("Voltooi de opdracht en krijg de volgende coordinaten")
+                .title(opdracht)
+                .snippet("Voltooi" + opdracht + "en krijg de volgende coordinaten")
                 .position(location));
+    }
+
+    public static MapsFragment newInstance(String opdracht, String lat, String lon){
+        MapsFragment fragment = new MapsFragment();
+        Bundle args = new Bundle();
+        args.putString(OPDRACHT, opdracht);
+        args.putString(LAT, lat);
+        args.putString(LON, lon);
+        fragment.setArguments(args);
+        return fragment;
     }
 }

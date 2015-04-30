@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class MainActivity extends Activity  {
+public class MainActivity extends Activity implements MainFragment.onShowLocationListener, LocationFragment.onShowMapsListener, MapsFragment.onShowMapsListener{
+
+    public String opdracht;
+    public String lat;
+    public String lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +22,27 @@ public class MainActivity extends Activity  {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new MapsFragment())
+                    .add(R.id.container, new MainFragment())
                     .commit();
         }
+    }
+
+    @Override
+    public void showLocationFragment(){
+        LocationFragment locationfragment = new LocationFragment();
+        android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, locationfragment.newInstance(opdracht, lat, lon));
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    @Override
+    public void showMapsFragment(){
+        MapsFragment mapsfragment = new MapsFragment();
+        android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, mapsfragment.newInstance(opdracht, lat, lon));
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override

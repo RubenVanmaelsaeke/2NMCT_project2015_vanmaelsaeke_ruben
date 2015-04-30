@@ -1,5 +1,6 @@
 package be.howest.nmct.googlemapsapp;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,8 +13,23 @@ import android.widget.Button;
  * Created by Ruben on 25/04/2015.
  */
 public class MainFragment extends Fragment {
+    onShowLocationListener i;
+
+    static final String OPDRACHT = "be.howest.nmct.OPDRACHT";
+
+    public String currentOpdracht;
 
     private Button btnOpdracht1, btnOpdracht2, btnOpdracht3, btnOpdracht4;
+
+    public interface onShowLocationListener{
+        public void showLocationFragment();
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        i = (onShowLocationListener) activity;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +46,8 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 1
-
+                currentOpdracht = btnOpdracht1.getText().toString();
+                i.showLocationFragment();
             }
         });
 
@@ -39,7 +56,8 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 2
-
+                currentOpdracht = btnOpdracht2.getText().toString();
+                i.showLocationFragment();
             }
         });
 
@@ -48,7 +66,8 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 3
-
+                currentOpdracht = btnOpdracht3.getText().toString();
+                i.showLocationFragment();
             }
         });
 
@@ -57,10 +76,24 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 4
-
+                currentOpdracht = btnOpdracht4.getText().toString();
+                i.showLocationFragment();
             }
         });
 
         return v;
+    }
+
+    public static MainFragment newInstance(String opdracht){
+        MainFragment fragment = new MainFragment();
+        Bundle args = new Bundle();
+        args.putString(OPDRACHT, opdracht);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    //noodzakelijk!!!!
+    public MainFragment(){
+
     }
 }
