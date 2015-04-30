@@ -1,11 +1,10 @@
 package be.howest.nmct.googlemapsapp;
 
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     MapFragment mMap;
 
-    onShowMapsListener i;
+    //onShowMapsListener i;
 
     static final String OPDRACHT = "be.howest.nmct.OPDRACHT";
     static final String LAT = "be.howest.nmct.LAT";
@@ -35,20 +34,20 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     public String opdracht;
     public Double lat, lon;
 
-    public interface onShowMapsListener{
+    /*public interface onShowMapsListener{
         public void showMapsFragment();
-    }
+    }*/
 
     //noodzakelijk!!!!
     public MapsFragment(){
 
     }
 
-    @Override
+    /*@Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         i = (onShowMapsListener) activity;
-    }
+    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,7 +92,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_marker))
                 .title(opdracht)
-                .snippet("Voltooi" + opdracht + "en krijg de volgende coordinaten")
+                .snippet("Voltooi " + opdracht + " en krijg de volgende coordinaten")
                 .position(location));
     }
 

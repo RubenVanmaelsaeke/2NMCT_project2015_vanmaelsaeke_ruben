@@ -28,7 +28,7 @@ public class LocationFragment extends Fragment {
     private Button btnToon;
 
     public interface onShowMapsListener{
-        public void showMapsFragment();
+        public void showMapsFragment(String opdracht, String lat, String lon);
     }
 
     @Override
@@ -70,10 +70,10 @@ public class LocationFragment extends Fragment {
                 if (!txtLat.getText().toString().matches("") || !txtLon.getText().toString().matches("")){
                     lat = txtLat.getText().toString();
                     lon = txtLon.getText().toString();
-                    i.showMapsFragment();
+                    i.showMapsFragment(opdracht, lat, lon);
                 }
                 else{
-                    Toast.makeText(getActivity(), "Gelieve de coordinaten op te geven...", Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity(), "Gelieve de coordinaten op te geven...", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -81,12 +81,10 @@ public class LocationFragment extends Fragment {
         return v;
     }
 
-    public static LocationFragment newInstance(String opdracht, String lat, String lon){
+    public static LocationFragment newInstance(String opdracht){
         LocationFragment fragment = new LocationFragment();
         Bundle args = new Bundle();
         args.putString(OPDRACHT, opdracht);
-        args.putString(LAT, lat);
-        args.putString(LON, lon);
         fragment.setArguments(args);
         return fragment;
     }

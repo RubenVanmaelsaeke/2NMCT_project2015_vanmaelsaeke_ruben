@@ -14,7 +14,8 @@
         android:textColor="#00adef"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
+        android:layout_marginTop="34dp"
+        android:text="OPDRACHT 1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,10 +35,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="LAT"
         android:id="@+id/textView3"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginStart="50dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/txtOpdracht" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,9 +44,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="LON"
         android:id="@+id/textView4"
-        android:layout_marginStart="53dp"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_toEndOf="@+id/txtOpdracht" />
+        android:layout_below="@+id/txtLat"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_marginTop="35dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -55,11 +54,10 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/txtLat"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_alignEnd="@+id/txtOpdracht"
         android:hint="Bijv. &quot;50.827981&quot;"
-        android:gravity="center_vertical|center_horizontal" />
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView3" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -67,23 +65,22 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/txtLon"
-        android:layout_alignTop="@+id/txtLat"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_toEndOf="@+id/txtOpdracht"
         android:hint="Bijv. &quot;3.272589&quot;"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Toon op Map"
         android:id="@+id/btnToon"
-        android:layout_below="@+id/txtLat"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="48dp"
-        android:layout_alignEnd="@+id/textView4"
         android:background="#00adef"
         android:textColor="#ffffff"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_below="@+id/txtLon"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="32dp"
+        android:layout_alignEnd="@+id/textView2" />
 
 </RelativeLayout>

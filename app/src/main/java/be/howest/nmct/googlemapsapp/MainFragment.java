@@ -22,7 +22,7 @@ public class MainFragment extends Fragment {
     private Button btnOpdracht1, btnOpdracht2, btnOpdracht3, btnOpdracht4;
 
     public interface onShowLocationListener{
-        public void showLocationFragment();
+        public void showLocationFragment(String opdracht);
     }
 
     @Override
@@ -34,6 +34,10 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getArguments() != null){
+            currentOpdracht = getArguments().getString(OPDRACHT);
+        }
     }
 
     @Nullable
@@ -47,7 +51,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 1
                 currentOpdracht = btnOpdracht1.getText().toString();
-                i.showLocationFragment();
+                i.showLocationFragment(currentOpdracht);
             }
         });
 
@@ -57,7 +61,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 2
                 currentOpdracht = btnOpdracht2.getText().toString();
-                i.showLocationFragment();
+                i.showLocationFragment(currentOpdracht);
             }
         });
 
@@ -67,7 +71,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 3
                 currentOpdracht = btnOpdracht3.getText().toString();
-                i.showLocationFragment();
+                i.showLocationFragment(currentOpdracht);
             }
         });
 
@@ -77,7 +81,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 //Go to 2nd screen with value from button 4
                 currentOpdracht = btnOpdracht4.getText().toString();
-                i.showLocationFragment();
+                i.showLocationFragment(currentOpdracht);
             }
         });
 
