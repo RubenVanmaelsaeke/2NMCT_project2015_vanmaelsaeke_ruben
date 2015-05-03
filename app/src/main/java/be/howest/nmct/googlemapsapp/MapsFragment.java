@@ -86,10 +86,13 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap map) {
         LatLng location = new LatLng(lat, lon);
+
         map.setMyLocationEnabled(true);
 
         map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
+
         map.addMarker(new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_marker))
                 .title(opdracht)
