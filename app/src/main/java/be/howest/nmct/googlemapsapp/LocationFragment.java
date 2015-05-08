@@ -73,7 +73,7 @@ public class LocationFragment extends Fragment {
                     i.showMapsFragment(opdracht, lat, lon);
                 }
                 else{
-                    Toast.makeText(getActivity(), "Gelieve de coordinaten op te geven...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Gelieve de coördinaten in te vullen...", Toast.LENGTH_SHORT).show();
                 }
             }
         });

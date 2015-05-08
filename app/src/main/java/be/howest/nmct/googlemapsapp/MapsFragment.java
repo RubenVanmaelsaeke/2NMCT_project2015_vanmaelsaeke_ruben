@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,8 +26,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     MapFragment mMap;
 
-    //onShowMapsListener i;
-
     static final String OPDRACHT = "be.howest.nmct.OPDRACHT";
     static final String LAT = "be.howest.nmct.LAT";
     static final String LON = "be.howest.nmct.LON";
@@ -34,20 +33,10 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     public String opdracht;
     public Double lat, lon;
 
-    /*public interface onShowMapsListener{
-        public void showMapsFragment();
-    }*/
-
     //noodzakelijk!!!!
     public MapsFragment(){
 
     }
-
-    /*@Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        i = (onShowMapsListener) activity;
-    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,8 +85,10 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions()
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_marker))
                 .title(opdracht)
-                .snippet("Voltooi " + opdracht + " en krijg de volgende coordinaten")
+                .snippet("Voltooi " + opdracht + " en krijg de volgende coördinaten")
                 .position(location));
+
+        Toast.makeText(getActivity(), "Klik op de marker en rechtsonderaan heb je de optie om de route uit te stippelen", Toast.LENGTH_LONG).show();
     }
 
     public static MapsFragment newInstance(String opdracht, String lat, String lon){

@@ -22,12 +22,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView2"
-        android:textSize="20dp"
-        android:textColor="#00adef"
-        android:layout_marginTop="60dp"
+        android:textSize="25dp"
+        android:text="Geef hier de coördinaten in"
+        android:layout_marginTop="44dp"
         android:layout_below="@+id/txtOpdracht"
-        android:layout_centerHorizontal="true"
-        android:text="Vul de gegeven coordinaten in:" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,8 +34,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="LAT"
         android:id="@+id/textView3"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/txtOpdracht" />
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:textColor="#00adef" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,9 +45,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="LON"
         android:id="@+id/textView4"
-        android:layout_below="@+id/txtLat"
-        android:layout_alignEnd="@+id/textView3"
-        android:layout_marginTop="35dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textView3"
+        android:textColor="#00adef" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -56,9 +57,9 @@
         android:id="@+id/txtLat"
         android:hint="Bijv. &quot;50.827981&quot;"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/txtOpdracht"
+        android:layout_alignEnd="@+id/txtOpdracht" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -68,9 +69,9 @@
         android:id="@+id/txtLon"
         android:hint="Bijv. &quot;3.272589&quot;"
         android:gravity="center_horizontal"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_alignEnd="@+id/btnToon"
-        android:layout_toEndOf="@+id/textView4" />
+        android:layout_below="@+id/textView4"
+        android:layout_alignEnd="@+id/txtLat"
+        android:layout_alignStart="@+id/txtLat" />
 
     <Button
         android:layout_width="wrap_content"
@@ -80,9 +81,9 @@
         android:background="#00adef"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:layout_below="@+id/txtLon"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="34dp"
         android:layout_alignEnd="@+id/textView2" />
 
 </RelativeLayout>
